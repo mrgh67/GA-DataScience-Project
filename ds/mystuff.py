@@ -1082,3 +1082,73 @@ class objectClassification(object):
                 print "airplane"
         else:
             print "No dominant probability ( >", cutOff, "). No classification undertaken"
+            
+    def getClassWithCutoff(self, imageNo, model, cutOff):
+        cInfo = self.runBinaryClassifier(imageNo, model)
+        imageDataMatrix = cInfo[0]
+        imLabel = cInfo[1]
+        
+        max = -np.Inf
+        for i in range(10):
+            if model.predict_proba(imageDataMatrix[0])[0][i] > max:
+                max = model.predict_proba(imageDataMatrix[0])[0][i]
+        if max > cutOff:
+                    
+            theClass = model.predict(imageDataMatrix[0])
+            if theClass == 0:
+                return "frog"
+            elif theClass == 1:
+                return "truck"
+            elif theClass == 2:
+                return "deer"
+            elif theClass == 3:
+                return "automobile"
+            elif theClass == 4:
+                return "bird"
+            elif theClass == 5:
+                return "cat"
+            elif theClass == 6:
+                return "dog"
+            elif theClass == 7:
+                return "horse"
+            elif theClass == 8:
+                return "ship"
+            elif theClass == 9:
+                return "airplane"
+        else:
+            return "none"
+        
+def getClassWithCutoff(self, imageNo, model, cutOff):
+    cInfo = self.runBinaryClassifier(imageNo, model)
+    imageDataMatrix = cInfo[0]
+    imLabel = cInfo[1]
+
+    max = -np.Inf
+    for i in range(10):
+            max = model.predict_proba(imageDataMatrix[0])[0][i]
+    if max > cutOff:
+
+        theClass = model.predict(imageDataMatrix[0])
+        if theClass == 0:
+            return "frog"
+        elif theClass == 1:
+            return "truck"
+        elif theClass == 2:
+            return "deer"
+        elif theClass == 3:
+            return "automobile"
+        elif theClass == 4:
+            return "bird"
+        elif theClass == 5:
+            return "cat"
+        elif theClass == 6:
+            return "dog"
+        elif theClass == 7:
+            return "horse"
+        elif theClass == 8:
+            return "ship"
+        elif theClass == 9:
+            return "airplane"
+    else:
+        return "none"
+
