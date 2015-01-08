@@ -1,5 +1,5 @@
-GA-DataScience-Project
-======================
+Classifiying Images - CIFAR-10
+==============================
 
 General Assembly Data Science Project 2014
 
