@@ -1,8 +1,6 @@
 Classifiying Images - CIFAR-10
 ==============================
 
-General Assembly Data Science Project 2014
-
 Building a classification engine for the CIFAR-10 tiny image database.
 
 Documentation for this project can be found in the Wiki: https://github.com/mrgh67/GA-DataScience-Project/wiki
